@@ -2,12 +2,14 @@
 require 'functions/debug.php';
 require 'classes/Voiture.php';
 
-$voiture1 = new Voiture();
+$voiture1 = new Voiture("Lada", "Niva", "blanc", [2000, 1500, 800], 900);
+$voiture2 = new Voiture("Nissan", "Cube", "violet", [2500, 1800, 1200], 1200);
 
-debug($voiture1);
+echo $voiture1->getMarque();
 
-$voiture1->couleur = "Rouge";
-$voiture1->masse = 1000;
-$voiture1->modele = "R14";
+echo '<br />';
 
-$voiture2 = new Voiture('Tesla', 'RX11', 'Black', [2000,1500,800], 9000);
+$voiture1->vitesse = 25;
+$voiture2->vitesse = 30;
+
+echo $voiture2->calculerEnerigeCinetique();
